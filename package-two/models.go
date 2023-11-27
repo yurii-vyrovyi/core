@@ -2,19 +2,18 @@ package package_two
 
 import (
 	"math/rand"
-	"time"
 )
 
 const Version = "v0.2"
 
 type DataStructTypeOne struct {
-	ID      time.Time `json:"id"`
+	ID      uint64 `json:"id"`
 	Message string `json:"message"`
 }
 
 func GenerateRandomData() DataStructTypeOne {
 	return DataStructTypeOne{
-		ID:      time.Now(),
+		ID:      rand.Uint64(),
 		Message: randSeq(12),
 	}
 }
