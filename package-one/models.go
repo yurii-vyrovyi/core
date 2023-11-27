@@ -1,7 +1,6 @@
 package package_one
 
 import (
-	"github.com/google/uuid"
 	"math/rand"
 )
 
@@ -9,13 +8,13 @@ const Version = "v0.0"
 
 
 type DataStructTypeOne struct {
-	ID      uuid.UUID `json:"id"`
+	ID      string `json:"id"`
 	Message string `json:"message"`
 }
 
 func GenerateRandomData() DataStructTypeOne {
 	return DataStructTypeOne{
-		ID:      uuid.New(),
+		ID:      randSeq(8),
 		Message: randSeq(12),
 	}
 }
